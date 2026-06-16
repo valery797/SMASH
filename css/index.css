@@ -361,10 +361,12 @@ button {
 
 .hero__text-top {
   width: fit-content;
+  text-align: end;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
-.hero__text-top br {
-  display: none;
-}
+
 .hero__text-bottom {
   width: fit-content;
   display: flex;
@@ -379,7 +381,7 @@ button {
 .about__wrapper {
   display: flex;
   flex-direction: column;
-  padding: 100px 0 141px 0;
+  padding: 100px 0 70px 0;
 }
 h2 {
   font-family: "KyivType Serif", serif;
@@ -459,18 +461,14 @@ h2 {
   background: #f9f8f4;
 }
 .club__wrapper {
-  padding: 110px 0 61px 0;
+  padding: 130px 0 194px 0;
 }
-
-.club__grid {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(auto, 1fr));
-  margin-top: 30px;
+.club__wrapper h2 {
+  margin-bottom: 108px;
 }
-@media (max-width: 768px) {
-  .club__grid {
-    grid-template-columns: repeat(2, minmax(auto, 1fr));
+@media screen and (max-width: 600px) {
+  .club__wrapper h2 {
+    margin-bottom: 50px;
   }
 }
 .club__product {
@@ -555,7 +553,7 @@ h2 {
 .contacts__wrapper {
   display: flex;
   flex-direction: column;
-  padding: 70px 0 70px 0;
+  padding: 125px 0 125px 0;
 }
 h4 {
   font-family: "KyivType Serif", serif;
@@ -568,11 +566,11 @@ h4 {
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin-top: 60px;
+  margin-top: 75px;
   z-index: 2;
 }
 .contacts__inner p:first-child {
-  margin-bottom: 75px;
+  margin-bottom: 55px;
 }
 .contacts__inner p:last-child {
   margin-top: 18px;
@@ -592,12 +590,16 @@ p {
   font-size: 32px;
   line-height: 44px;
   color: #295943;
-  margin: 18px auto 10px 0;
+  margin: 10px auto 10px 0;
   transition: color 0.3s ease-out;
 }
 
 .contacts__inner a:hover {
   color: #e6c7e7;
+}
+
+.contacts__link {
+  margin-bottom: 70px !important;
 }
 /*===footer===*/
 .footer {
@@ -623,11 +625,18 @@ p {
 .footer__inner {
   display: flex;
   gap: 52px;
-  margin-top: 58px;
+  margin-top: 90px;
 }
 .footer__qr {
   max-width: 30vw;
   aspect-ratio: 326 / 326;
+  transition: all 0.3s ease-out;
+}
+.footer__qr img {
+  width: 100%;
+}
+.footer__qr:hover {
+  transform: scale(1.05);
 }
 .footer__text {
   max-width: 510px;
@@ -723,9 +732,7 @@ p {
   .hero__title h1 {
     font-size: 36px;
   }
-  .hero__text-top br {
-    display: block;
-  }
+
   .hero__text-bottom {
     gap: 15px;
   }
@@ -772,22 +779,136 @@ p {
   .contacts__inner {
     margin-top: 30px;
   }
-  .contacts__inner p:first-child {
-    margin-bottom: 30px;
-  }
-  .club__product img {
-    object-fit: cover;
-  }
-  .club__grid {
-    gap: 20px 0;
-  }
-  .club__product:last-child {
-    grid-column: span 2;
-    place-self: center;
-    width: 50%;
+}
+/*==swiper==*/
+.swiper-merch {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Слайды - адаптивная высота */
+.swiper-merch .swiper-slide {
+  width: 100%;
+  height: auto;
+}
+
+/* Изображения - адаптивные */
+.swiper-image {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Стрелки - видимые, адаптивные */
+.swiper-merch .swiper-button-prev,
+.swiper-merch .swiper-button-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border-radius: 50%;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.swiper-merch .swiper-button-prev {
+  left: 10px;
+  right: auto;
+}
+
+.swiper-merch .swiper-button-next {
+  right: 10px;
+  left: auto;
+}
+
+.swiper-merch .swiper-button-prev::after,
+.swiper-merch .swiper-button-next::after {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+.swiper-merch .swiper-button-prev::after {
+  content: "‹";
+}
+
+.swiper-merch .swiper-button-next::after {
+  content: "›";
+}
+
+/* Пагинация */
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: white;
+  opacity: 0.7;
+}
+
+.swiper-pagination-bullet-active {
+  background: #295943;
+  opacity: 1;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: #295943 !important;
+}
+/* Десктоп */
+@media screen and (min-width: 1200px) {
+  .swiper-image {
+    max-width: 847px;
     margin: 0 auto;
   }
-  .club__product:hover img {
-    transform: scale(1.2);
+}
+
+/* Планшет */
+@media screen and (max-width: 768px) {
+  .swiper-merch .swiper-button-prev,
+  .swiper-merch .swiper-button-next {
+    width: 35px;
+    height: 35px;
+  }
+  .swiper-merch .swiper-button-prev::after,
+  .swiper-merch .swiper-button-next::after {
+    font-size: 16px;
+  }
+  .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* Мобилка */
+@media screen and (max-width: 480px) {
+  .swiper-merch .swiper-button-prev,
+  .swiper-merch .swiper-button-next {
+    width: 30px;
+    height: 30px;
+  }
+  .swiper-merch .swiper-button-prev {
+    left: 5px;
+  }
+  .swiper-merch .swiper-button-next {
+    right: 5px;
+  }
+  .swiper-merch .swiper-button-prev::after,
+  .swiper-merch .swiper-button-next::after {
+    font-size: 14px;
   }
 }

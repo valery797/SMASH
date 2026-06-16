@@ -10,6 +10,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
     <title>СМЭШ</title>
   </head>
   <body>
@@ -98,10 +102,8 @@
                 <h2>УДАР</h2>
               </div>
               <div class="hero__text-top">
-                <h2>
-                  ДЛЯ ТЕХ, КТО<br />
-                  ИГРАЕТ ЯРКО
-                </h2>
+                <h2>ДЛЯ ТЕХ,</h2>
+                <h2>КТО ИГРАЕТ ЯРКО</h2>
               </div>
             </div>
           </div>
@@ -163,35 +165,46 @@
       <section id="club" class="club">
         <div class="container">
           <div class="club__wrapper">
-            <h2>ВСТУПАЙ КЛУБ СМЭША</h2>
-            <div class="club__grid">
-              <div class="club__product">
-                <img src="./products-images/product-1.png" alt="товар" />
+            <h2>НАШ МЕРЧ</h2>
+            <div class="swiper swiper-merch">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                  <div class="swiper-image">
+                    <img src="./images/6.jpg" alt="мерч" />
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="swiper-image">
+                    <img src="./images/5.jpg" alt="мерч" />
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="swiper-image">
+                    <img src="./images/4.jpg" alt="мерч" />
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="swiper-image">
+                    <img src="./images/3.jpg" alt="мерч" />
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="swiper-image">
+                    <img src="./images/2.jpg" alt="мерч" />
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="swiper-image">
+                    <img src="./images/1.jpg" alt="мерч" />
+                  </div>
+                </div>
               </div>
-              <div class="club__product">
-                <img src="./products-images/product-2.png" alt="товар" />
-              </div>
-              <div class="club__product">
-                <img src="./products-images/product-3.png" alt="товар" />
-              </div>
-              <div class="club__product">
-                <img src="./products-images/product-4.png" alt="товар" />
-              </div>
-              <div class="club__product">
-                <img src="./products-images/product-5.png" alt="товар" />
-              </div>
-              <div class="club__product">
-                <img src="./products-images/product-6.png" alt="товар" />
-              </div>
-              <div class="club__product">
-                <img src="./products-images/product-7.png" alt="товар" />
-              </div>
-              <div class="club__product">
-                <img src="./products-images/product-8.png" alt="товар" />
-              </div>
-              <div class="club__product">
-                <img src="./products-images/product-9.png" alt="товар" />
-              </div>
+
+              <!-- If we need navigation buttons -->
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
             </div>
           </div>
         </div>
@@ -223,19 +236,13 @@
                 звоните или просто сохраняйте наши контакты, чтобы не
                 потеряться.
               </p>
-              <p>
-                По любым вопросам — начиная от цен, записи на тренировку и
-                заканчивая организацией турнира — вы всегда можете связаться с
-                нами по телефону
-              </p>
               <a href="tel:79657339500">+7 (965) 733-95-00</a>
-              <p>
-                Если вы не любитель звонков, пишите нам в любой мессенджер или
-                на почту
-              </p>
+
               <a href="mailto:smashtennis.com">smashtennis.com</a>
-              <p>Если хотите в начале на нас полюбоваться</p>
-              <a href="https://www.instagram.com/@SMASHTENNISSPB"
+
+              <a
+                class="contacts__link"
+                href="https://www.instagram.com/@SMASHTENNISSPB"
                 >@SMASHTENNISSPB</a
               >
               <p>
@@ -255,7 +262,9 @@
         <div class="footer__wrapper">
           <h4>УЗНАТЬ ЕЩЕEE БОЛЬШЕ</h4>
           <div class="footer__inner">
-            <img class="footer__qr" src="./images/qr-code.jpg" alt="код" />
+            <a href="" class="footer__qr">
+              <img src="./images/qr-code.jpg" alt="код" />
+            </a>
             <div class="footer__text">
               ЗДЕСТЬ СОБРАН НАШ БРЕНДБУК И ВСЯ ИНФОРМАЦИЯ О НАС
             </div>
@@ -263,6 +272,8 @@
         </div>
       </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="./js/index.js"></script>
+    <script src="./js/swiper.js"></script>
   </body>
 </html>
